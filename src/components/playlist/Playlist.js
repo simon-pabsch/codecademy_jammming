@@ -7,7 +7,7 @@ function Playlist() {
         <div className={styles.container}>
             <input className={styles.title} type="text"></input>
             <Tracklist />
-            <button className={styles.button}>Save to Spotify</button>
+            <button className={styles.button}>SAVE TO SPOTIFY</button>
         </div>
     );
 }
