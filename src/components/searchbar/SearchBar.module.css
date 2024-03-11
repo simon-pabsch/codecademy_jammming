@@ -1,0 +1,25 @@
+.form {
+    padding: 2rem;
+}
+.textfield {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    width: 30rem;
+    font-size: 1.3rem;
+    background-color: #284a34;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: lightgrey;
+}
+.button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem; 
+    font-size: 1.3rem;
+    color: lightgrey;
+    background-color: #284a34;
+    border: 1px solid black;
+    border-radius:  0.5rem;
+}

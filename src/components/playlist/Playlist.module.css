@@ -1,0 +1,29 @@
+.container {
+    margin: 2rem;
+    padding: 1rem;
+    flex: 1 200px;
+    background-color: lightgrey;
+}
+
+.title {
+    width: 80%;
+    height: 2rem;
+    color: #284a34;
+    background-color: lightgrey;
+    border-bottom: 1px solid #284a34;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 2rem;
+}
+
+.button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    color: lightgrey;
+    font-size: 1.3rem;
+    background-color: #284a34;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
