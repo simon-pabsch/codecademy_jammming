@@ -28,3 +28,13 @@
     border: 1px solid black;
     border-radius: 0.5rem;
 }
+
+.button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.button:active {
+    background-color:lightgrey;
+    color:#284a34;
+}

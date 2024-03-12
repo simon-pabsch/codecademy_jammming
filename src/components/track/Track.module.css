@@ -4,3 +4,21 @@
     align-items:center;
     padding: 0 1rem;
 }
+
+.container:hover {
+    background-color: white;
+}
+
+.right {
+    padding: 1rem;
+    border: 1px solid none;
+    border-radius: 0.5rem;
+}
+.right:hover {
+    border: 1px solid none;
+    border-radius: 0.5rem;
+    background-color: #284a34;
+    color: white;
+    cursor: pointer;
+}
+

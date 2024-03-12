@@ -6,7 +6,7 @@ function SearchResults(props) {
     return(
         <div className={styles.container}>
             <h2>Results</h2>
-            <Tracklist resultData={props.resultData} />
+            <Tracklist data={props.resultData} addTrack={props.addTrack} icon={"+"} />
         </div>
     );
 }
