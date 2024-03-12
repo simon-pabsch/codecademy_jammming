@@ -1,13 +1,12 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import styles from './SearchBar.module.css';
 
-
 function SearchBar(props) {
     const defaultText = "Please enter song title";
     const [searchText, setsearchText] = useState(defaultText);
     const [clicked, setClicked] = useState(false);
 
-     const handleChange = (event) => {
+    const handleChange = (event) => {
         setsearchText(event.target.value);
     }
 
@@ -20,10 +19,12 @@ function SearchBar(props) {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+
         if(searchText === defaultText || searchText === "") {
             setsearchText(defaultText);
             setClicked(false);
-        } 
+        }
+
         //This line fires action for App.js to Submit data
         props.onSearch(searchText);
         

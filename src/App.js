@@ -4,37 +4,29 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/searchbar/SearchBar.js';
 import SearchResults from './components/searchresults/SearchResults.js';
 import Playlist from './components/playlist/Playlist.js';
+import {getAccessToken, getSongs} from './modules/SpotifyAPI.js';
+
+
 
 function App() {
   //Mockdata
   const [result, setResult] = useState([]);
   const [playlist, setPlaylist] = useState([]);
+  const [accessToken, setAccessToken] = useState("");
 
-  const mockData = [
-    {title: 'Songtitle1',
-    artist: 'Artist1',
-    album: 'Album1'},
-  
-    {title: 'Songtitle2',
-    artist: 'Artist2',
-    album: 'Album2'},
-  
-    {title: 'Songtitle3',
-    artist: 'Artist3',
-    album: 'Album3'}
-  ]
-
-  //useEffect(() => {
-  //  setPlaylist(mockData);
-  //},[]);
+  useEffect(() => {
+    getAccessToken().then(response => {
+      setAccessToken(response);
+    });
+  },[]);
   
   const search = (searchText) => {
-    if(searchText === "" || searchText === "Please enter song title") {
-      setResult([]);
-    } else {
-      setResult(mockData);
-    }
+    if(searchText !== "" && searchText !== "Please enter song title") {
+      getSongs(accessToken, searchText).then(response => {
+        setResult(response.tracks.items);
+    });
   }
+}
 
   const addTrackToPlaylist = (trackObj) => {
     setPlaylist([...playlist, trackObj]);
@@ -47,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <section className="input">
-        <SearchBar onSearch={search}/>
+        <SearchBar onSearch={search} token={accessToken}/>
       </section>
       <section className="results">
         <SearchResults resultData={result} addTrack={addTrackToPlaylist}/>
