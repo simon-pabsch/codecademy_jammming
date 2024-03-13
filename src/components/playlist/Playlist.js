@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react';
-import styles from './Playlist.module.css';
+import React from 'react';
 import Tracklist from '../tracklist/Tracklist.js';
-import {getURIList, getPlaylistTitle} from '../../modules/SpotifyAPI.js';
+import styles from './Playlist.module.css';
 
 function Playlist(props) {
-
+    
     const handleClick = (event) => {
+        //This line calls the function "saveToSpotify" of App.js
         props.saveToSpotify(document.getElementById('playlistTitle').value, props.playlistData);
-        console.log(getURIList());
-        console.log(getPlaylistTitle());
     }
+
     return (
         <div className={styles.container}>
             <input id="playlistTitle" className={styles.title} type="text"></input>

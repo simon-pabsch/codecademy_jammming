@@ -1,7 +1,7 @@
 .container {
+    flex: 1 200px;
     margin: 2rem;
     padding: 1rem;
-    flex: 1 200px;
     background-color: lightgrey;
     opacity: 0.8;
 }
@@ -9,14 +9,14 @@
 .title {
     width: 80%;
     height: 2rem;
+    margin-bottom: 1rem;
     color: #284a34;
     background-color: lightgrey;
+    font-size: 2rem;
     border-bottom: 1px solid #284a34;
     border-top: none;
     border-left: none;
     border-right: none;
-    font-size: 2rem;
-    margin-bottom: 1rem;
 }
 
 .button {
@@ -24,18 +24,18 @@
     margin: 2rem auto;
     padding: 0.5rem 1rem;
     color: lightgrey;
-    font-size: 1.3rem;
     background-color: #284a34;
+    font-size: 1.3rem;
     border: 1px solid black;
     border-radius: 0.5rem;
 }
 
 .button:hover {
-    cursor: pointer;
     color: black;
+    cursor: pointer;
 }
 
 .button:active {
-    background-color:lightgrey;
     color:#284a34;
+    background-color:lightgrey;
 }

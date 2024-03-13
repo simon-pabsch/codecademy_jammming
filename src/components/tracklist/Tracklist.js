@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import styles from './Tracklist.module.css';
+import React from 'react';
 import Track from '../track/Track.js';
 
 function Tracklist(props) {
 
     let tracklistHTML = null;
+    
     if(props.data !== undefined) {
         tracklistHTML = (<div>
             {props.data.map((item, index) => (

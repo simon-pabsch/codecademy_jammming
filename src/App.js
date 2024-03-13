@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+
 import React, { useState, useEffect } from 'react';
 import SearchBar from './components/searchbar/SearchBar.js';
 import SearchResults from './components/searchresults/SearchResults.js';
 import Playlist from './components/playlist/Playlist.js';
+
 import {getAccessToken, getSongs, savePlaylistToSpotify} from './modules/SpotifyAPI.js';
 
 function App() {

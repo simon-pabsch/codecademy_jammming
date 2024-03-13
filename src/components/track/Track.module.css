@@ -14,11 +14,12 @@
     border: 1px solid none;
     border-radius: 0.5rem;
 }
+
 .right:hover {
+    color: white;
+    background-color: #284a34;
     border: 1px solid none;
     border-radius: 0.5rem;
-    background-color: #284a34;
-    color: white;
     cursor: pointer;
 }
 

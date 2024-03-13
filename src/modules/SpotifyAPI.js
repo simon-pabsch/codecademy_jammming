@@ -72,12 +72,4 @@ async function savePlaylistToSpotify(accessToken, title, array) {
     });
 }
 
-function getURIList() {
-  return uriList;
-}
-
-function getPlaylistTitle() {
-  return playlistTitle;
-}
-
-export {getAccessToken, getSongs, getURIList, getPlaylistTitle, savePlaylistToSpotify};
+export {getAccessToken, getSongs, savePlaylistToSpotify};

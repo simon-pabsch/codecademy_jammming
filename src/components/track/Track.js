@@ -4,8 +4,10 @@ import styles from './Track.module.css';
 function Track(props) {
     const handleClick = () => {
         if(props.icon === "+") {
+            //This line calls the function "addTrackToPlaylist" of App.js
             props.addTrack(props.data);
         } else {
+            //This line calls the function "removeTrackFromPlaylist" of App.js
             props.deleteTrack(props.id);
         }
     }

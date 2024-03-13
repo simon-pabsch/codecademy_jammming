@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState} from 'react';
 import styles from './SearchBar.module.css';
 
 function SearchBar(props) {
@@ -19,13 +19,12 @@ function SearchBar(props) {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        
         if(searchText === defaultText || searchText === "") {
             setsearchText(defaultText);
             setClicked(false);
         }
-
-        //This line fires action for App.js to Submit data
+        //This line calls the function "search" of App.js
         props.onSearch(searchText);
         
     }
