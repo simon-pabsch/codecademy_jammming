@@ -4,20 +4,15 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/searchbar/SearchBar.js';
 import SearchResults from './components/searchresults/SearchResults.js';
 import Playlist from './components/playlist/Playlist.js';
-import {getAccessToken, getSongs} from './modules/SpotifyAPI.js';
-
-
+import {getAccessToken, getSongs, savePlaylistToSpotify} from './modules/SpotifyAPI.js';
 
 function App() {
-  //Mockdata
   const [result, setResult] = useState([]);
   const [playlist, setPlaylist] = useState([]);
   const [accessToken, setAccessToken] = useState("");
 
   useEffect(() => {
-    getAccessToken().then(response => {
-      setAccessToken(response);
-    });
+    setAccessToken(getAccessToken(accessToken));
   },[]);
   
   const search = (searchText) => {
@@ -27,6 +22,9 @@ function App() {
     });
   }
 }
+  const saveToSpotify = (title, playlistArray) => {
+    savePlaylistToSpotify(accessToken, title, playlistArray);
+  }
 
   const addTrackToPlaylist = (trackObj) => {
     setPlaylist([...playlist, trackObj]);
@@ -43,7 +41,7 @@ function App() {
       </section>
       <section className="results">
         <SearchResults resultData={result} addTrack={addTrackToPlaylist}/>
-        <Playlist playlistData={playlist} deleteTrack={deleteTrackFromPlaylist}/>
+        <Playlist playlistData={playlist} deleteTrack={deleteTrackFromPlaylist} saveToSpotify={saveToSpotify} />
       </section>
     </div>
   );
